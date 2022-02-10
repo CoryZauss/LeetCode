@@ -4,16 +4,14 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    // move thru the array with 2 pointers
-    //for every i on left pointer move right pointer thru arr
-      // if pointers add up to target return both indexs
-      //if not move left up one and right back to left + 1
-   
-    for (let i = 0; i < nums.length; i++ ){
-        for (let j = i+1; j< nums.length; j++) {
-            if ( nums[i] + nums[j] === target) {
-                return [i, j]
-            } 
+    //use an object to keep track of variables as we move thru array
+    //check if target minus current indexs variable is present in the object on each itteration
+    // if present return stored i , and current i
+    let store = {}
+    for (let i = 0; i < nums.length; i++) {
+        if (store.hasOwnProperty(target-nums[i])) {
+            return[i, store[target-nums[i]]]
         }
+        store[nums[i]] = i
     }
 };
