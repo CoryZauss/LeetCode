@@ -10,7 +10,7 @@ var maxProfit = function(prices) {
     // if a num is lower than lowest 
       // loop thru rest of array for highest
       // set diff to highest - lowest
-    
+    //BRUTE SOLUTION
     
     let lowest;
     let highest;
