@@ -13,10 +13,10 @@
 var hasCycle = function(head) {
    
     while ( head !== null) {
-        if (head.visit) {
+        if (head.val === 'x') {
             return true
         }
-        head.visit = true
+        head.val = 'x'
         head = head.next
         
     }
