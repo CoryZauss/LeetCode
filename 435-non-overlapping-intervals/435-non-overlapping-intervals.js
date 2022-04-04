@@ -4,7 +4,7 @@
  */
 var eraseOverlapIntervals = function(intervals) {
     intervals.sort((a,b) => a[1] - b[1]);
-    //sort by lowest first interval
+    //sort by lowest first interval.. O(log n)
     
     let count = 0;
     let current = intervals[0];
@@ -14,5 +14,6 @@ var eraseOverlapIntervals = function(intervals) {
         //increases count if they are overlapping
         else current = intervals[i]
     }
-    return count
+    return count;
+    //total complexity is O(n log n) 
 };
