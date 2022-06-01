@@ -3,27 +3,18 @@
  * @param {number} val
  * @return {number}
  */
-// var removeElement = function(nums, val) {
+var removeElement = function(nums, val) {
  
-//     let changed = 0;
-//     let back = nums.length -1;
+    let changed = 0;
+    let back = nums.length -1;
     
-//     for (let i = nums.length -1; i >= 0; i--) {
-//         if (nums[i] === val) {
-//             changed++;
-//             nums[i] = nums[back]
-//             back--
-//         }
-//     }
-//     return nums.length - changed
-// };
- var removeElement = function(nums, val) {
-    for(let i = 0; i < nums.length; i++) {
-        if(nums[i] == val) {
-            nums.splice(i, 1);
-            i -= 1
+    for (let i = nums.length -1; i >= 0; i--) {
+        if (nums[i] === val) {
+            changed++;
+            nums[i] = nums[back]
+            back--
         }
     }
-    return nums.length;
-}
+    return nums.length - changed
+};
 
