@@ -5,26 +5,17 @@
  */
 var removeElement = function(nums, val) {
  
-    let front = 0, end = nums.length -1, changed = 0;
+    let changed = 0;
+    let back = nums.length -1;
     
-    while (front <= end) {
-        if(nums[end] === "_") end--;
-        if ( nums[end] === val) {
-            nums[end] = "_";
-            end--
-            changed++
-        } 
-        if ( nums[front] === val) {
-            nums[front] = "_";
-            let temp = nums[end];
-            nums[end] = nums[front];
-            nums[front] = temp;
-          
-            changed++
-        } else {
-            front++
+    for (let i = nums.length -1; i >= 0; i--) {
+        if (nums[i] === val) {
+            changed++;
+            nums[i] = nums[back]
+            back--
         }
-        console.log(nums, front)
     }
     return nums.length - changed
 };
+
+
