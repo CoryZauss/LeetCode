@@ -13,10 +13,6 @@
     
 // };
 
-var missingNumber = function(arr) {
-   let ans = 0;
-    for(let i=0; i<arr.length; i++){
-        ans = ans^i^arr[i];
-    }
-    return ans^arr.length;
+const missingNumber = function (nums) {
+	return (nums.length * (nums.length + 1)) / 2 - nums.reduce((a, b) => a + b, 0);
 };
