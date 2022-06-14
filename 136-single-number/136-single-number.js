@@ -4,27 +4,20 @@
  */
 var singleNumber = function(nums) {
     // must be linear, no extra space ( in place)
-    for ( let i = 0; i < nums.length; i++) {
-        let p1 = i+1, p2= i-1;
-        if (nums[i] !== '_') {
-            while( p2 > 0 || p1 < nums.length) {
-                if (nums[i] === nums[p1]) {
-                    nums[i] = '_';
-                    nums[p1] = '_';
-                } 
-                if (nums[i] === nums[p2]) {
-                    nums[i] = '_';
-                    nums[p2] = '_';
+    let p1 = 1;
+        while( p1 < nums.length) {
+            if (nums[0] === nums[p1]) {
+                   
+                   nums.splice(p1, 1);
+                   nums.splice(0, 1);
+                   p1 = 0;
+                } else if (p1 === nums.length -1 && nums[0] !== nums[p1]) {
+                    return nums[0]
                 }
-                p1 < nums.length && p1++
-                p2 > 0 && p2--
+                
+              p1++
+            
             }
-        }
-      
-    }
-    for ( let i = 0; i < nums.length; i++) {
-        if ( nums[i] !== '_' ) {
-            return nums[i]
-        }
-    }
+    
+    return nums[0]
 };
