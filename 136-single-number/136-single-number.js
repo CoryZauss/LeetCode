@@ -20,5 +20,10 @@ var singleNumber = function(nums) {
 //         }
     
 //     return nums[0]
-    return nums.reduce((prev, curr) => prev ^ curr);
+    // return nums.reduce((prev, curr) => prev ^ curr);
+    let result = 0;
+    for (let i = 0; i < nums.length; i++) {
+        result ^= nums[i]
+    }
+    return result;
 };
