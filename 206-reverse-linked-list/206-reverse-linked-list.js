@@ -9,18 +9,6 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-//var reverseList = function(head) {
-    //this works but isnt "in place"
-    // let newlist = null;
-    // while (head !== null) {
-    //     let temp = head;
-    //     head = head.next;
-    //     temp.next = newlist;
-    //     newlist = temp;
-    // }
-    // return newlist;
-//};
-
 //itterative o(n) time
 var reverseList = function(head) {
     let prev = null, curr = head, next = null;
@@ -34,5 +22,17 @@ var reverseList = function(head) {
         curr = next;
     }
     return prev;
-}
+};
+
+//var reverseList = function(head) {
+    //this works but isnt "in place"
+    // let newlist = null;
+    // while (head !== null) {
+    //     let temp = head;
+    //     head = head.next;
+    //     temp.next = newlist;
+    //     newlist = temp;
+    // }
+    // return newlist;
+//};
 
