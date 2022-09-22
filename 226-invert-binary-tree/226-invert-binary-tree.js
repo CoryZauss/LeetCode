@@ -11,34 +11,15 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    //(18% solution)
-//     if (root === null) return root;
     
-//     let temp = root.left ;
-//     root.left = root.right;
-//     root.right = temp;
-    
-    
-//         invertTree(root.right)
-    
-//         invertTree(root.left)
-    
-    
-//     return root;
-    
-//////////////
-    
-    
-  if (root == null) return null
-  let queue = [root]
-  while (queue.length) {
-    let current = queue.shift()
-    let temp = current.left
-    current.left = current.right
-    current.right = temp
-    if (current.left != null) queue.push(current.left)
-    if (current.right != null) queue.push(current.right)
-  }
-  return root
-    
+    const dfsInvert =(node) => {
+        if(!node) return
+        let temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+        dfsInvert(node.left)
+        dfsInvert(node.right)
+    }
+    dfsInvert(root)
+    return root
 };
