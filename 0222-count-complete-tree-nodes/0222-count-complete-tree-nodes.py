@@ -8,4 +8,17 @@ class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
-        return self.countNodes(root.left) + 1 + self.countNodes(root.right)
+        
+        l, r = root, root
+        h_l, h_r = 0, 0 # height of l and r
+        
+        while l != None:
+            h_l+=1
+            l = l.left
+        while r != None:
+            h_r += 1
+            r=r.right
+        
+        if h_l == h_r:
+            return (1<<h_l) -1
+        return 1+ self.countNodes(root.left) + self.countNodes(root.right)
