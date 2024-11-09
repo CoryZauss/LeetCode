@@ -21,15 +21,17 @@ class Solution:
     # DFS SOLUTION
         res = []
         
-        stack = []
+        stack = [] # LIFO
         cur = root
         
-        while cur or stack:
+        while cur or stack: #if either is not empty
             while cur:
+                #go left as long as we can, add each node to stack
                 stack.append(cur)
                 cur = cur.left
-            cur = stack.pop()
-            res.append(cur.val)
-            cur = cur.right
+            #while loop ends means cur is now null ( we reached the end )
+            cur = stack.pop() #remove last in 
+            res.append(cur.val) # add this node to result
+            cur = cur.right 
         
         return res
