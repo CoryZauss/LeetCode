@@ -7,42 +7,19 @@
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
       
-        d = {}
-      
-        level = 0
-        
-        def traverse(node, lev):
-            print(node)
-            if d.get(lev) == None:
-                d[lev] = []
-               
-            if node == None:
-                d[lev].append("None")
-                return
-            d[lev].append(node.val)
-            if node.left:
-                traverse(node.left, lev +1)
-            else:
-                if d.get(lev+1) == None:
-                    d[lev+1] = []
-                d[lev +1].append("None")
-            if node.right:
-                traverse(node.right,lev+1)
-            else:
-                if d.get(lev+1) == None:
-                    d[lev+1] = []
-                d[lev +1].append("None")
-            
-       
-        traverse(root,level)
-        
-        for cur in d.values():
-            l,r = 0, len(cur)-1
-            while l < r:
-                if cur[l] != cur[r]:
-                    return False
-                l+=1
-                r-=1
-            
-        return True
+        if not root:
+            return True  # An empty tree is symmetric.
+
+        def isMirror(t1, t2):
+            if not t1 and not t2:
+                return True  # Both subtrees are empty.
+            if not t1 or not t2:
+                return False  # One subtree is empty, the other is not.
+            # Check if current nodes are mirrors and recurse on children.
+            return (t1.val == t2.val) and \
+                   isMirror(t1.left, t2.right) and \
+                   isMirror(t1.right, t2.left)
+
+        # Start the recursion with the left and right children of the root.
+        return isMirror(root.left, root.right)
     
