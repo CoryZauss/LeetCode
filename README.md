@@ -11,6 +11,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0088-merge-sorted-array](https://github.com/CoryZauss/LeetCode/tree/master/0088-merge-sorted-array) |
+| [0125-valid-palindrome](https://github.com/CoryZauss/LeetCode/tree/master/0125-valid-palindrome) |
 ## Sorting
 |  |
 | ------- |
@@ -35,4 +36,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0144-binary-tree-preorder-traversal](https://github.com/CoryZauss/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/CoryZauss/LeetCode/tree/master/0145-binary-tree-postorder-traversal) |
+## String
+|  |
+| ------- |
+| [0125-valid-palindrome](https://github.com/CoryZauss/LeetCode/tree/master/0125-valid-palindrome) |
 <!---LeetCode Topics End-->
